@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <%- include("head") %>
+</head>
+<body>
+  <%- include("header") %>
+  <div class="container">
+    
+
+    <% if (data.length > 0) { %>
+      <ol>
+        <% data.forEach(post => { %>
+          <li>
+            <strong> <%= post.name %> -  <%= post.createdAt %></strong><br>
+
+            <br><%= post.message %><br>
+          </li><br>
+        <% }) %>
+      </ol>
+    <% } else { %>
+      <p>No posts found.</p>
+    <% } %>
+  </div>
+</body>
+</html>
